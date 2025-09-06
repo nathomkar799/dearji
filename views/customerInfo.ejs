@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <% if (qrCodeData) { %>
+      <title>Customer Created</title>
+    <% } else { %>
+      <title>Customer Details</title>
+    <% } %>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .card {
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      .list-group-item {
+        border: none;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .btn {
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- Success Alert -->
+      <% if (qrCodeData) { %>
+        <div class="alert alert-success text-center">
+          <h3>✅ Customer Created Successfully!</h3>
+        </div>
+      <% } else { %>
+        <div class="alert alert-success text-center">
+          <h3>✅ Customer Details Retrieved Successfully!</h3>
+        </div>
+      <% } %>
+
+      <div class="row">
+        <!-- Customer Details -->
+        <div class="col-md-6">
+          <div class="card p-4 mb-4">
+            <h4 class="mb-3">👤 Customer Details</h4>
+            <p><strong>Name:</strong> <%= customer.name %></p>
+            <p><strong>Contact:</strong> <%= customer.contact %></p>
+
+            <h5 class="mt-3">📏 Measurements</h5>
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Chest:</strong> <%= customer.measurements.chest || 'N/A' %></li>
+              <li class="list-group-item"><strong>Waist:</strong> <%= customer.measurements.waist || 'N/A' %></li>
+              <li class="list-group-item"><strong>Hips:</strong> <%= customer.measurements.hips || 'N/A' %></li>
+              <li class="list-group-item"><strong>Shoulder:</strong> <%= customer.measurements.shoulder || 'N/A' %></li>
+              <li class="list-group-item"><strong>Sleeve:</strong> <%= customer.measurements.sleeve || 'N/A' %></li>
+              <li class="list-group-item"><strong>Inseam:</strong> <%= customer.measurements.inseam || 'N/A' %></li>
+              <li class="list-group-item"><strong>Neck:</strong> <%= customer.measurements.neck || 'N/A' %></li>
+            </ul>
+            <p><strong>Remarks:</strong> <%= customer.remarks %></p>
+          </div>
+        </div>
+
+        <!-- QR Code Section -->
+        <% if (qrCodeData) { %>
+          <div class="col-md-6">
+            <div class="card p-4 text-center mb-4">
+              <h5>📲 Customer QR Code</h5>
+              <p class="text-muted">Scan this QR to view customer details anytime.</p>
+              
+              <!-- QR Image -->
+              <img id="qrImage" src="<%= qrCodeData %>" alt="QR Code" class="img-fluid mb-3" style="max-width: 200px;">
+          
+              <!-- QR Action -->
+              <a id="downloadQR" class="btn btn-success" download="customer-qr.png">⬇️ Download QR</a>
+            </div>
+          </div>
+        <% } %>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mt-4 text-center">
+        <a href="/customer/updateCustomerDetailForm/<%= customer._id %>" class="btn btn-warning me-2">✏️ Edit Customer</a>
+        <a href="/customerDetailManagement" class="btn btn-primary">⬅️ Back to Customers</a>
+      </div>
+    </div>
+
+    <!-- JS for QR Download -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const qrImg = document.getElementById("qrImage");
+        const downloadBtn = document.getElementById("downloadQR");
+
+        if (qrImg && downloadBtn) {
+          downloadBtn.href = qrImg.src; // link QR image as downloadable PNG
+        }
+      });
+    </script>
+  </body>
+</html>
