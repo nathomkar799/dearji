@@ -77,6 +77,8 @@ async function handleLogin( req,res) {
         
         // res.redirect("/customer/customerDetailManagement");
     } catch (err) {
+      console.log(err);
+      
         res.status(500).json({ message: "❌ Error: " + err.message });
     }
 }

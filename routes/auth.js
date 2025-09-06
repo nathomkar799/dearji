@@ -8,5 +8,6 @@ router.post('/signup', upload.single("photoOfShop"), handleGenrateNewUser);
 
 //Login mechanism
 router.post('/login', handleLogin)
+// router.get('/login', handleLogin)
 
 module.exports = router;

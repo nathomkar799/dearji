@@ -62,7 +62,10 @@ async function handleAddNewCustomer(req, res) {
     await customer.save();
 
      // Generate QR for the customer profile URL
-     const url = `http://localhost:3000/customer/${customer._id}`;
+     
+    //  const url = `http://localhost:3000/customer/${customer._id}`;
+     const url = `https://dearji.onrender.com/customer/${customer._id}`;
+
      const qrCodeData = await QRCode.toDataURL(url);
 
 
