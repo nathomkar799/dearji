@@ -54,3 +54,47 @@ Clone the repository:
 ```bash
 git clone https://github.com/your-username/dearji.git
 cd dearji
+```
+
+Install dependencies:  
+```bash
+npm install
+```
+
+Create a `.env` file and add:  
+```env
+MONGO_URI=your_mongodb_connection_string
+SESSION_SECRET=your_secret_key
+```
+
+Run the app locally:  
+```bash
+npm start
+```
+
+Visit:  
+```bash
+http://localhost:3000
+```
+
+---
+
+## 🌍 Deployment  
+This project is deployed on **Render**.  
+👉 [Live Demo](https://your-render-url)  
+
+---
+
+## 🤝 Contributing  
+Contributions, issues, and feature requests are welcome!  
+Check out the [issues page](https://github.com/your-username/dearji/issues).  
+
+---
+
+## 📜 License  
+This project is licensed under the **MIT License**.  
+
+---
+
+### ❤️ Acknowledgments  
+Special thanks to the open-source community, Bootstrap, MongoDB, and Render for making this project possible.  
