@@ -75,13 +75,7 @@ http://localhost:3000
 
 ## 🌍 Deployment  
 This project is deployed on **Render**.  
-👉 [Live Demo](https://your-render-url)  
-
----
-
-## 🤝 Contributing  
-Contributions, issues, and feature requests are welcome!  
-Check out the [issues page](https://github.com/your-username/dearji/issues).  
+👉 [Live Demo](https://dearji.onrender.com/)  
 
 ---
 
