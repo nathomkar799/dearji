@@ -1,24 +1,56 @@
-# 📌 Dearji : A web based tailoring solution enabling cross-tailor and cross-station management of your own measurements.
+# 👔 Dearji  
+_A web-based tailoring solution for seamless cross-tailor and cross-station measurement management._
 
-A fullstack **MEN (MongoDB, Express, Node.js) + EJS** web application deployed on **Render**.  
-This app provides user authentication, CRUD operations, and server-side rendering with EJS.
-
----
-
-## 🚀 Features
-- User authentication (Login & Signup)  
-- MongoDB Atlas integration  
-- CRUD functionality for managing data  
-- Responsive UI with **Bootstrap + EJS templates**  
-- Deployment ready on **Render**  
+<p align="center">
+  <img src="https://img.shields.io/badge/Stack-MEN%20+%20EJS-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Deployed%20On-Render-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Database-MongoDB%20Atlas-brightgreen?style=for-the-badge" />
+</p>
 
 ---
 
-## 🛠️ Tech Stack
-- **Frontend**: EJS, Bootstrap, JavaScript  
-- **Backend**: Node.js, Express.js  
-- **Database**: MongoDB Atlas  
-- **Deployment**: Render  
+## ✨ Overview  
+**Dearji** is a fullstack **MEN (MongoDB, Express, Node.js) + EJS** web application designed for tailors and customers.  
+It allows users to **store, manage, and access measurements anywhere** — enabling **cross-tailor and cross-station** management.  
 
 ---
 
+## 🚀 Features  
+- ✅ User authentication (**Signup & Login**)  
+- ✅ Secure password storage with **bcrypt**  
+- ✅ **CRUD operations** for customer measurement management  
+- ✅ **MongoDB Atlas** integration for cloud data storage  
+- ✅ Responsive UI with **Bootstrap + EJS templates**  
+- ✅ Deployment ready on **Render**  
+
+---
+
+## 🛠️ Tech Stack  
+**Frontend:**  
+- EJS (Server-Side Rendering)  
+- Bootstrap 5  
+- Vanilla JavaScript  
+
+**Backend:**  
+- Node.js  
+- Express.js  
+
+**Database:**  
+- MongoDB Atlas (Cloud Database)  
+
+**Deployment:**  
+- Render  
+
+---
+
+## 📸 Screenshots  
+> _(Add screenshots of Signup, Login, Dashboard, and CRUD pages here for better presentation)_  
+
+---
+
+## ⚡ Installation & Setup  
+
+Clone the repository:  
+```bash
+git clone https://github.com/your-username/dearji.git
+cd dearji
