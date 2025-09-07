@@ -43,8 +43,8 @@ It allows users to **store, manage, and access measurements anywhere** — enabl
 
 ---
 
-## 📸 Screenshots  
-> _(Add screenshots of Signup, Login, Dashboard, and CRUD pages here for better presentation)_  
+//## 📸 Screenshots  
+//> _(Add screenshots of Signup, Login, Dashboard, and CRUD pages here for better presentation)_  
 
 ---
 
