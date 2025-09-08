@@ -9,16 +9,37 @@
       body {
         height: 100vh;
         background-color: #f8f9fa;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
       .card {
         border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: transform 0.2s, box-shadow 0.2s;
       }
-      .tailor-card {
-        transition: transform 0.2s;
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
       }
-      .tailor-card:hover {
-        transform: scale(1.03);
+      .btn {
+        border-radius: 10px;
+        font-weight: 500;
+      }
+      .left-card {
+        max-width: 360px;
+      }
+      .tailor-card h5 {
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .tailor-card p {
+        margin-bottom: 6px;
+      }
+      .tailor-card .btn {
+        margin-top: 5px;
+      }
+      .section-title {
+        font-weight: 700;
+        letter-spacing: 0.5px;
       }
     </style>
   </head>
@@ -28,55 +49,55 @@
         
         <!-- Left Side (Tailor Login) -->
         <div class="col-md-4 d-flex justify-content-center align-items-center bg-white">
-          <div class="card p-4 w-75 text-center">
-            <h3>👔 Tailor</h3>
-            <a href="/loginForm" class="btn btn-primary w-100 mb-2">I want to tailor good dresses</a>
+          <div class="card p-4 text-center w-100 left-card">
+            <h3 class="mb-3">👔 Tailor</h3>
+            <a href="/loginForm" class="btn btn-primary w-100">I want to tailor good dresses</a>
           </div>
         </div>
 
         <!-- Right Side (Tailor Listings for Customers) -->
-        <div class="col-md-8 p-5">
-          <h3 class="mb-4 text-center">Available Tailors</h3>
+        <div class="col-md-8 p-5 bg-light">
+          <h3 class="mb-4 text-center section-title">Available Tailors</h3>
           <div class="row g-4">
 
             <!-- Tailor Card Example -->
             <div class="col-md-6">
               <div class="card tailor-card p-3">
                 <h5>Ramesh Kumar</h5>
-                <p class="mb-1">👔 Specialist in Suits & Blazers</p>
+                <p>👔 Specialist in Suits & Blazers</p>
                 <p class="text-muted">📍 Delhi, India</p>
                 <p>⭐ 4.7 (120 reviews)</p>
-                <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                <button class="btn btn-outline-primary btn-sm w-100">View Profile</button>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="card tailor-card p-3">
                 <h5>Sita Devi</h5>
-                <p class="mb-1">👗 Specialist in Bridal Wear</p>
+                <p>👗 Specialist in Bridal Wear</p>
                 <p class="text-muted">📍 Mumbai, India</p>
                 <p>⭐ 4.9 (200 reviews)</p>
-                <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                <button class="btn btn-outline-primary btn-sm w-100">View Profile</button>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="card tailor-card p-3">
                 <h5>Arjun Tailors</h5>
-                <p class="mb-1">👕 Casual & Everyday Wear</p>
+                <p>👕 Casual & Everyday Wear</p>
                 <p class="text-muted">📍 Bangalore, India</p>
                 <p>⭐ 4.5 (90 reviews)</p>
-                <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                <button class="btn btn-outline-primary btn-sm w-100">View Profile</button>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="card tailor-card p-3">
                 <h5>Kavita Boutique</h5>
-                <p class="mb-1">👗 Designer Sarees & Dresses</p>
+                <p>👗 Designer Sarees & Dresses</p>
                 <p class="text-muted">📍 Kolkata, India</p>
                 <p>⭐ 4.8 (150 reviews)</p>
-                <button class="btn btn-outline-primary btn-sm">View Profile</button>
+                <button class="btn btn-outline-primary btn-sm w-100">View Profile</button>
               </div>
             </div>
 
