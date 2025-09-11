@@ -8,6 +8,11 @@
   </head>
   <body class="bg-light d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="card shadow p-4" style="width: 400px; border-radius: 12px;">
+      <% if (typeof message !== 'undefined') { %>
+        <div class="alert alert-success">
+          <%- message %>
+        </div>
+      <% } %>
       <h2 class="text-center mb-4">Login</h2>
       <form action="/auth/login" method="post">
         <div class="mb-3">

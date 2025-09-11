@@ -13,6 +13,7 @@ const app = express();
 //connecting the DB
 connectDB();
 
+app.use(express.static("public"));
 //json Parser 
 app.use(express.json());
 //cookie Parser

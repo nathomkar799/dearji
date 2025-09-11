@@ -3,6 +3,7 @@ const Customer = require('../models/customer')
 
 //Get the HomePage
 function handleHomepage(req,res) {
+  console.log({message:"We are on '/'."});
     res.render('home');
 }
 

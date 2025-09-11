@@ -11,7 +11,7 @@ async function handleGenrateNewUser (req, res) {
         name: req.body.name,
         username: req.body.username,
         addressOfShop: req.body.addressOfShop,
-        photoOfShop: req.file?.path, // save file path
+        // photoOfShop: req.file?.path, // save file path
         password: hashedPassword,
         experience: req.body.experience,
         contact: req.body.contact,
@@ -20,28 +20,29 @@ async function handleGenrateNewUser (req, res) {
       await newUser.save();
       console.log({ message: "✅ User registered successfully!", user: newUser });
       
-      res.render("login");
+      res.render("afterSignup", { message: "Account created successfully!" }); 
     } catch (err) {
+      console.log({message: "❌ Error: " + err.message});
+      
       res.status(500).json({ message: "❌ Error: " + err.message });
     }
 }
 
 //Get the Signup Form
 async function handleSignupForm(req, res) {
-    console.log("Ye chal gaya bhai. Signup form aayaa hoga check karna");
+    console.log({message : "Now we have came on the Signup Form"});
     res.render("signup");
 }
 
 //get the Login Form
 async function handleLoginForm(req, res) {
-    console.log("Ye chal gaya bhai. Login form aayaa hoga check karna");
-    res.render("login");
+    console.log({message:"Now we are in the Login Page"});
+    const message = req.query.message; // from spinner redirect
+  res.render("login", { message });
 }
 
 //Mechanism responsible for login
 async function handleLogin( req,res) {
-    console.log("Bhai dekho to ab login hoito");
-    
     try {
         const {username, password } = req.body;
 

@@ -1,18 +1,18 @@
 const mongoose = require("mongoose")
-
+//some itmes are removed as there were some chang going on.
 const userSchema = new mongoose.Schema({
     name : {
         type : String,
-        required: true
+        // required: true
     }, 
     username : {
         type : String,
-        required : true,
-        unique: true
+        // required : true,
+        // unique: true
     }, 
     addressOfShop : {
         type : String,
-        required: true
+        // required: true
     }, 
     // photoOfShop : {
     //     type : String,
@@ -20,14 +20,14 @@ const userSchema = new mongoose.Schema({
     // }, 
     password : {
         type : String,
-        required : true
+        // required : true
     }, 
     experience : {
         type : Number,
     }, 
     contact : {
         type : String,
-        required : true
+        // required : true
     }
 }, {timestamps : true})
 
