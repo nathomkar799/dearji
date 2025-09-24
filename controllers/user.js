@@ -49,13 +49,13 @@ async function handleLogin( req,res) {
         //checking if the user exists
         const user = await User.findOne({ username });
         if ( !user ) {
-            return res.status(400).json({message: "❌ User not found!" })
+            return res.status(400).render("login",{message: "❌ User not found!", isUser : false })
         }
 
         //compare password
         const isMatch = await bcrypt.compare(password, user.password);
         if ( !isMatch ) {
-            return res.status(400).json({ message: "❌ Invalid password!"})
+            return res.status(400).render("login",{ message: "❌ Invalid password!", isPassword: false})
         }
 
         //generate JWT
@@ -64,7 +64,7 @@ async function handleLogin( req,res) {
             process.env.secret_key,
             { expiresIn: "1h"}
         );
-        console.log({ message : "✅ Login successful!" , token })
+        res.status(200).json({ message : "✅ Login successful!" , token })
         
          // set token as HTTP-only cookie
     res.cookie("token", token, {

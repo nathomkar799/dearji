@@ -7,61 +7,135 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
       body {
-        height: 100vh;
+        min-height: 100vh;
         background-color: #f8f9fa;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
+
+      /* General Card Styling */
       .card {
-        border-radius: 15px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        transition: transform 0.2s, box-shadow 0.2s;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.7); /* translucent */
+        backdrop-filter: blur(12px);          /* glass effect */
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
       .card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       }
-      .btn {
-        border-radius: 10px;
-        font-weight: 500;
-      }
+
+      /* Tailor login card */
       .left-card {
         max-width: 360px;
+        text-align: center;
       }
+
+      /* Tailor info cards */
       .tailor-card h5 {
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 8px;
+        color: #212529;
       }
       .tailor-card p {
         margin-bottom: 6px;
+        font-size: 0.95rem;
       }
-      .tailor-card .btn {
-        margin-top: 5px;
-      }
+
+      /* Section Title */
       .section-title {
         font-weight: 700;
         letter-spacing: 0.5px;
+        color: #fff;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      }
+
+      /* Left side background */
+      .bg-image {
+        /* background-image: url("/images/fabric-texture.jpg"); 👈 Replace with real fabric image */
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      /* Right side background */
+      .bg-image-right {
+        /* background-image: url("/images/vitalijs-barilo-azMZaQCUyV8-unsplash.jpg"); */
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        padding: 3rem 2rem;
+      }
+
+      /* Buttons */
+      .btn {
+        border-radius: 12px;
+        font-weight: 500;
+      }
+
+      .btn-outline-primary {
+        border: 2px solid #0d6efd;
+      }
+      .btn-outline-primary:hover {
+        background: #0d6efd;
+        color: #fff;
+      }
+
+      /* Tailor button with stitched underline */
+      .tailor-btn {
+        position: relative;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+      }
+      .tailor-btn::after {
+        content: "";
+        position: absolute;
+        bottom: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        border-bottom: 2px dashed #0d6efd; /* stitched effect */
+        box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      }
+
+      /* Responsive Tweaks */
+      @media (max-width: 768px) {
+        .bg-image, .bg-image-right {
+          min-height: auto;
+          background: none;
+        }
+        .left-card {
+          max-width: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container-fluid h-100">
+    <div class="container-fluid min-vh-100">
       <div class="row h-100">
-        
+
         <!-- Left Side (Tailor Login) -->
-        <div class="col-md-4 d-flex justify-content-center align-items-center bg-white">
-          <div class="card p-4 text-center w-100 left-card">
-            <h3 class="mb-3">👔 Tailor</h3>
-            <a href="/loginForm" class="btn btn-primary w-100">I want to tailor good dresses</a>
+        <div class="bg-image col-12 col-md-4 d-flex align-items-center justify-content-center">
+          <div class="card p-4 left-card">
+            <h3 class="mb-4">👔 Tailor</h3>
+            <a href="/loginForm" class="btn btn-primary w-100 tailor-btn">I want to tailor good dresses</a>
           </div>
         </div>
 
         <!-- Right Side (Tailor Listings for Customers) -->
-        <div class="col-md-8 p-5 bg-light">
+        <div class="bg-image-right col-12 col-md-8">
           <h3 class="mb-4 text-center section-title">Available Tailors</h3>
           <div class="row g-4">
 
-            <!-- Tailor Card Example -->
-            <div class="col-md-6">
+            <!-- Tailor Cards -->
+            <div class="col-12 col-sm-6">
               <div class="card tailor-card p-3">
                 <h5>Ramesh Kumar</h5>
                 <p>👔 Specialist in Suits & Blazers</p>
@@ -71,7 +145,7 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-12 col-sm-6">
               <div class="card tailor-card p-3">
                 <h5>Sita Devi</h5>
                 <p>👗 Specialist in Bridal Wear</p>
@@ -81,7 +155,7 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-12 col-sm-6">
               <div class="card tailor-card p-3">
                 <h5>Arjun Tailors</h5>
                 <p>👕 Casual & Everyday Wear</p>
@@ -91,7 +165,7 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-12 col-sm-6">
               <div class="card tailor-card p-3">
                 <h5>Kavita Boutique</h5>
                 <p>👗 Designer Sarees & Dresses</p>
