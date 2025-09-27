@@ -64,7 +64,7 @@ async function handleLogin( req,res) {
             process.env.secret_key,
             { expiresIn: "1h"}
         );
-        res.status(200).json({ message : "✅ Login successful!" , token })
+        // res.status(200).json({ message : "✅ Login successful!" , token })
         
          // set token as HTTP-only cookie
     res.cookie("token", token, {
@@ -76,7 +76,6 @@ async function handleLogin( req,res) {
     // redirect to customer management page
       res.redirect("/customer/customerDetailManagement");
         
-        // res.redirect("/customer/customerDetailManagement");
     } catch (err) {
       console.log(err);
       

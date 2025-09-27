@@ -5,4 +5,4 @@ const message = spinnerContainer.dataset.message;
 // Redirect after 5 seconds (spinner duration)
 setTimeout(() => {
   window.location.href = "/loginForm?message=" + encodeURIComponent(message);
-}, 5000);
+},4000);
