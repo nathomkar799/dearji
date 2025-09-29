@@ -55,7 +55,7 @@ async function handleLogin( req,res) {
         //compare password
         const isMatch = await bcrypt.compare(password, user.password);
         if ( !isMatch ) {
-            return res.status(400).render("login",{ message: "❌ Invalid password!", isPassword: false})
+            return res.status(400).render("login",{ message: "❌ Invalid Password!", isPassword: false})
         }
 
         //generate JWT
